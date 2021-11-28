@@ -35,7 +35,11 @@ function mapping(){
       zoomOffset: -1,
   });
 
-  var map = L.map('map', {layers:[light]}).fitWorld();
+  var map = L.map('map', {
+    layers:[dark],
+    maxBounds : [[47.33126776157878, -122.63860441671564], [47.09334144436703, -122.29401946898379]],
+    minZoom : 12
+  }).setView([47.2528769, -122.4442906], 12);
 
   var baseMaps = {"Light Mode": light, "Dark Mode": dark};
 
