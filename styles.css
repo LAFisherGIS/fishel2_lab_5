@@ -137,8 +137,9 @@ body{
 
 .wrapper {
   max-width: 75vw;
-  margin: 4em;
-  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h3{
