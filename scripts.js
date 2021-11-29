@@ -40,15 +40,20 @@ function pollutionMap(){
 
     var baseMaps = {"Light Mode": light, "Dark Mode": dark};
 
-    var map = L.map('pbgmap', {
+    var pbgMap = L.map('pbgmap', {
       layers:[dark],
       maxBounds : [[47.33126776157878, -122.63860441671564], [47.09334144436703, -122.29401946898379]],
       minZoom : 12
     }).setView([47.2528769, -122.4442906], 12);
 
-    var myControl = L.control.layers(baseMaps).addTo(map);
+    var myControl = L.control.layers(baseMaps).addTo(pbgMap);
 
+    let Legend =  new L.Control.Legend({
+        position: 'bottomright',
+    });
 
+    pbgMap.addControl(Legend);
+    $("#pbgmap .legend-container").append( $("#pbglegend") );
 }
 
 function clusterMap(){
@@ -73,15 +78,20 @@ function clusterMap(){
 
     var baseMaps = {"Light Mode": light, "Dark Mode": dark};
 
-    var map = L.map('clustermap', {
+    var clusterMap = L.map('clustermap', {
       layers:[dark],
       maxBounds : [[47.33126776157878, -122.63860441671564], [47.09334144436703, -122.29401946898379]],
       minZoom : 12
     }).setView([47.2528769, -122.4442906], 12);
 
-    var myControl = L.control.layers(baseMaps).addTo(map);
+    var myControl = L.control.layers(baseMaps).addTo(clusterMap);
 
+    let Legend =  new L.Control.Legend({
+        position: 'bottomright',
+    });
 
+    clusterMap.addControl(Legend);
+    $("#clustermap .legend-container").append( $("#clusterlegend") );
 }
 
 function schoolMap(){
@@ -106,15 +116,20 @@ function schoolMap(){
 
     var baseMaps = {"Light Mode": light, "Dark Mode": dark};
 
-    var map = L.map('schoolmap', {
+    var schoolMap = L.map('schoolmap', {
       layers:[dark],
       maxBounds : [[47.33126776157878, -122.63860441671564], [47.09334144436703, -122.29401946898379]],
       minZoom : 12
     }).setView([47.2528769, -122.4442906], 12);
 
-    var myControl = L.control.layers(baseMaps).addTo(map);
+    var myControl = L.control.layers(baseMaps).addTo(schoolMap);
 
+    let Legend =  new L.Control.Legend({
+        position: 'bottomright',
+    });
 
+    schoolMap.addControl(Legend);
+    $("#schoolmap .legend-container").append( $("#schoollegend") );
 }
 
 function parkMap(){
@@ -139,13 +154,18 @@ function parkMap(){
 
     var baseMaps = {"Light Mode": light, "Dark Mode": dark};
 
-    var map = L.map('parkmap', {
+    var parkMap = L.map('parkmap', {
       layers:[dark],
       maxBounds : [[47.33126776157878, -122.63860441671564], [47.09334144436703, -122.29401946898379]],
       minZoom : 12
     }).setView([47.2528769, -122.4442906], 12);
 
-    var myControl = L.control.layers(baseMaps).addTo(map);
+    var myControl = L.control.layers(baseMaps).addTo(parkMap);
 
+    let Legend =  new L.Control.Legend({
+        position: 'bottomright',
+    });
 
+    parkMap.addControl(Legend);
+    $("#parkmap .legend-container").append( $("#parklegend") );
 }
