@@ -35,37 +35,37 @@
 							<ul style="list-style-type:none">
 								<li>
 									<svg width="24" height="24">
-										<rect width="22" height="22" stroke="black" stroke-width="1" fill="#d7191c" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#fef0d9" stroke-width="1" fill="#fef0d9" fill-opacity=".4"/>
 									</svg>
 									<text>Minimal Pollution</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="22" height="22" stroke="black" stroke-width="1" fill="#fdae61" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#fdd49e" stroke-width="1" fill="#fdd49e" fill-opacity=".4"/>
 									</svg>
 									<text>Light Pollution</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="22" height="22" stroke="purple" stroke-width="1" fill="#ffffbf" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#fdbb84" stroke-width="1" fill="#fdbb84" fill-opacity=".4"/>
 									</svg>
 									<text>Moderate Pollution</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="22" height="22" stroke="rebeccapurple" stroke-width="1" fill="#abd9e9" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#fc8d59" stroke-width="1" fill="#fc8d59" fill-opacity=".4"/>
 									</svg>
 									<text>Heavy Pollution</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#e34a33" stroke-width="1" fill="#e34a33" fill-opacity=".4"/>
 									</svg>
 									<text>Very Heavy Pollution</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#b30000" stroke-width="1" fill="#b30000" fill-opacity=".4"/>
 									</svg>
 									<text>Extreme Pollution</text>
 								</li>
@@ -79,31 +79,31 @@
 							<ul style="list-style-type:none">
 								<li>
 									<svg width="24" height="24">
-										<rect width="22" height="22" stroke="black" stroke-width="1" fill="#d7191c" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#d7191c" stroke-width="1" fill="#d7191c" fill-opacity=".4"/>
 									</svg>
 									<text>Low Cluster</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="22" height="22" stroke="black" stroke-width="1" fill="#fdae61" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#fdae61" stroke-width="1" fill="#fdae61" fill-opacity=".4"/>
 									</svg>
 									<text>Low Outlier</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="22" height="22" stroke="purple" stroke-width="1" fill="#ffffbf" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#ffffbf" stroke-width="1" fill="#ffffbf" fill-opacity=".4"/>
 									</svg>
 									<text>No Significant Pattern</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="22" height="22" stroke="rebeccapurple" stroke-width="1" fill="#abd9e9" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#abd9e9" stroke-width="1" fill="#abd9e9" fill-opacity=".4"/>
 									</svg>
 									<text>High Outlier</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#2c7bb6" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
 									</svg>
 									<text>High Cluster</text>
 								</li>
@@ -112,7 +112,8 @@
 						<h3>Pollution and Demographics in Context of Elementary and Middle Schools</h3>
 						<div id="schoolmap"></div>
 						<p>lorem ipsum</p>
-						<canvas id="schoolChart" width="1600" height="900"></canvas>
+						<canvas id="esChart" width="1600" height="900"></canvas>
+						<canvas id="msChart" width="1600" height="900"></canvas>
 						<div id="schoollegend">
 							<ul style="list-style-type:none">
 								<li>
@@ -153,15 +154,13 @@
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
-										<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#2b8cbe" stroke-width="1" fill="#2b8cbe" fill-opacity=".4"/>
 									</svg>
 									<text>School Grounds</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
-										<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#808000" stroke-width="1" fill="#808000" fill-opacity=".4"/>
 									</svg>
 									<text>School Cachement Zone</text>
 								</li>
@@ -175,38 +174,51 @@
 							<ul style="list-style-type:none">
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
-										<rect width="22" height="22" stroke="black" stroke-width="1" fill="#d7191c" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#fef0d9" stroke-width="1" fill="#fef0d9" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Minimally Polluted Park</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
-										<rect width="22" height="22" stroke="black" stroke-width="1" fill="#fdae61" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#fdd49e" stroke-width="1" fill="#fdd49e" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Lightly Polluted Park</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
-										<rect width="22" height="22" stroke="purple" stroke-width="1" fill="#ffffbf" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#fdbb84" stroke-width="1" fill="#fdbb84" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Moderately Polluted Park</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
-										<rect width="22" height="22" stroke="rebeccapurple" stroke-width="1" fill="#abd9e9" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#fc8d59" stroke-width="1" fill="#fc8d59" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Heavily Polluted Park</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
-										<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="#e34a33" stroke-width="1" fill="#e34a33" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Very Heavily Polluted Park</text>
+								</li>
+								<li>
+									<svg width="24" height="24">
+										<rect width="22" height="22" stroke="#b30000" stroke-width="1" fill="#b30000" fill-opacity=".4"/>
+									</svg>
+									<text>Extremely Polluted Park</text>
+								</li>
+								<li>
+									<svg width="24" height="24">
+										<circle cx="12" cy="14" r="7" stroke="green" stroke-width="3" fill="green" fill-opacity=".4"/>
+									</svg>
+									<text>Park Entrance</text>
+								</li>
+								<li>
+									<svg width="24" height="24">
+										<rect width="22" height="22" stroke="##808000" stroke-width="1" fill="#808000" fill-opacity=".4"/>
+									</svg>
+									<text>Park Service Area (~5-10 Minute Walk)</text>
 								</li>
 							</ul>
 						</div>
