@@ -82,6 +82,11 @@ div.leaflet-popup-tip {
   padding: 1em;
 }
 
+
+#pbglegend, #clusterlegend, #schoollegend, #parklegend {
+  background: var(--backgroundchroma)
+}
+
 /*
 Fixed Elements This section determines all characteristics of the page not altered by or involved in the lightmode/darkmode selection. All fixed elements of the website live here.
 */
@@ -198,7 +203,7 @@ a:active{
     color: var(--textchroma);
 }
 
-.legend {
+#pbglegend, #clusterlegend, #schoollegend, #parklegend {
   opacity: 0.85;
   line-height: 0em;
   border-radius: 0.5em;
@@ -210,4 +215,8 @@ a:active{
 
 li {
   padding: 0.25em
+}
+
+canvas {
+  margin-bottom: 3em;
 }

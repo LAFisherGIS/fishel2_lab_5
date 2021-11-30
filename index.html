@@ -31,133 +31,147 @@
 						<h3>Pollution and Other Statistics by Blockgroup</h3>
 	        	<div id="pbgmap"></div>
 						<p>lorem ipsum</p>
-						<div type="legend" id="pbglegend">
+						<div id="pbglegend">
 							<ul style="list-style-type:none">
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
 										<rect width="22" height="22" stroke="black" stroke-width="1" fill="#d7191c" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Minimal Pollution</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
 										<rect width="22" height="22" stroke="black" stroke-width="1" fill="#fdae61" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Light Pollution</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
 										<rect width="22" height="22" stroke="purple" stroke-width="1" fill="#ffffbf" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Moderate Pollution</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
 										<rect width="22" height="22" stroke="rebeccapurple" stroke-width="1" fill="#abd9e9" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Heavy Pollution</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
 										<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Very Heavy Pollution</text>
+								</li>
+								<li>
+									<svg width="24" height="24">
+										<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
+									</svg>
+									<text>Extreme Pollution</text>
 								</li>
 							</ul>
 						</div>
 						<h3>Mapped Clusters of Demographic and Pollution Data</h3>
 						<div id="clustermap"></div>
 						<p>lorem ipsum</p>
-						<div type="legend" id="clusterlegend">
+						<canvas id="clusterChart" width="1600" height="900"></canvas>
+						<div id="clusterlegend">
 							<ul style="list-style-type:none">
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
 										<rect width="22" height="22" stroke="black" stroke-width="1" fill="#d7191c" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Low Cluster</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
 										<rect width="22" height="22" stroke="black" stroke-width="1" fill="#fdae61" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Low Outlier</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
 										<rect width="22" height="22" stroke="purple" stroke-width="1" fill="#ffffbf" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>No Significant Pattern</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
 										<rect width="22" height="22" stroke="rebeccapurple" stroke-width="1" fill="#abd9e9" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>High Outlier</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
 										<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>High Cluster</text>
 								</li>
 							</ul>
 						</div>
-						<h3>Pollution and Demographics in Context of K-12 Schools</h3>
+						<h3>Pollution and Demographics in Context of Elementary and Middle Schools</h3>
 						<div id="schoolmap"></div>
 						<p>lorem ipsum</p>
-						<div type="legend" id="schoollegend">
+						<canvas id="schoolChart" width="1600" height="900"></canvas>
+						<div id="schoollegend">
 							<ul style="list-style-type:none">
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
-										<rect width="22" height="22" stroke="black" stroke-width="1" fill="#d7191c" fill-opacity=".4"/>
+										<circle cx="12" cy="14" r="7" stroke="#ffffb2" stroke-width="3" fill="#ffffb2" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Minimally Polluted School</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
-										<rect width="22" height="22" stroke="black" stroke-width="1" fill="#fdae61" fill-opacity=".4"/>
+										<circle cx="12" cy="14" r="7" stroke="#fed976" stroke-width="3" fill="#fed976" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Lightly Polluted School</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
-										<rect width="22" height="22" stroke="purple" stroke-width="1" fill="#ffffbf" fill-opacity=".4"/>
+										<circle cx="12" cy="14" r="7" stroke="#feb24c" stroke-width="3" fill="#feb24c" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Moderately Polluted School</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
-										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
-										<rect width="22" height="22" stroke="rebeccapurple" stroke-width="1" fill="#abd9e9" fill-opacity=".4"/>
+										<circle cx="12" cy="14" r="7" stroke="#fd8d3c" stroke-width="3" fill="#fd8d3c" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>Heavily Polluted School</text>
+								</li>
+								<li>
+									<svg width="24" height="24">
+										<circle cx="12" cy="14" r="7" stroke="#f03b20" stroke-width="3" fill="#f03b20" fill-opacity=".4"/>
+									</svg>
+									<text>Very Heavily Polluted School</text>
+								</li>
+								<li>
+									<svg width="24" height="24">
+										<circle cx="12" cy="14" r="7" stroke="#bd0026" stroke-width="3" fill="#bd0026" fill-opacity=".4"/>
+									</svg>
+									<text>Extremely Polluted School</text>
 								</li>
 								<li>
 									<svg width="24" height="24">
 										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
 										<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
 									</svg>
-									<text></text>
+									<text>School Grounds</text>
+								</li>
+								<li>
+									<svg width="24" height="24">
+										<rect width="24" height="24" stroke="white" stroke-width="1" fill="white" fill-opacity=".4"/>
+										<rect width="22" height="22" stroke="slateblue" stroke-width="1" fill="#2c7bb6" fill-opacity=".4"/>
+									</svg>
+									<text>School Cachement Zone</text>
 								</li>
 							</ul>
 						</div>
 						<h3>Pollution and Demographics in Context of Parks</h3>
 						<div id="parkmap"></div>
 						<p>lorem ipsum</p>
-						<div type="legend" id="parklegend">
+						<canvas id="parkChart" width="1600" height="900"></canvas>
+						<div id="parklegend">
 							<ul style="list-style-type:none">
 								<li>
 									<svg width="24" height="24">
