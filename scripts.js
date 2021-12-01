@@ -375,7 +375,7 @@ function schoolMap(){
         labels: schoolCats,
         datasets: [
           {
-            label: "Correlation Coefficients for Demographic Elementary School Traits and Pollution",
+            label: "Correlation Coefficients for Demographic Middle School Traits and Pollution",
             backgroundColor: "#3e95cd",
             data: msStats
           }
