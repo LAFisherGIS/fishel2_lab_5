@@ -111,7 +111,7 @@ function pollutionMap(){
     }).addTo(pbgMap);
 
     let Legend =  new L.Control.Legend({
-        position: 'bottomright',
+        position: 'bottomleft',
     });
 
     pbgMap.addControl(Legend);
@@ -150,38 +150,47 @@ function clusterMap(){
 
     let polluJson = L.geoJson(pollutionCluster, {
       style: clustPaint,
+      interactive: false
     });
 
     let socioJson = L.geoJson(socioeconomicCluster, {
       style: clustPaint,
+      interactive: false
     });
 
     let whiteJson = L.geoJson(whitePop, {
       style: clustPaint,
+      interactive: false
     });
 
     let blackJson = L.geoJson(blackPop, {
       style: clustPaint,
+      interactive: false
     });
 
     let nativeJson = L.geoJson(nativePop, {
       style: clustPaint,
+      interactive: false
     });
 
     let asianJson = L.geoJson(asianPop, {
       style: clustPaint,
+      interactive: false
     });
 
     let pacificJson = L.geoJson(pacificPop, {
       style: clustPaint,
+      interactive: false
     });
 
     let multiJson = L.geoJson(multiPop, {
       style: clustPaint,
+      interactive: false
     });
 
     let otherJson = L.geoJson(otherPop, {
       style: clustPaint,
+      interactive: false
     });
 
     let clusterOverlay = {
@@ -205,7 +214,7 @@ function clusterMap(){
     var myControl = L.control.layers(clusterOverlay,'', {collapsed:false}).addTo(clusterMap);
 
     let Legend =  new L.Control.Legend({
-        position: 'bottomright',
+        position: 'bottomleft',
     });
 
     clusterMap.addControl(Legend);
@@ -249,10 +258,9 @@ function schoolMap(){
     function sbPaint(feature) {
         return {
             fillColor: '#808000',
-            weight: 2,
+            weight: 1,
             opacity: 1,
             color: 'white',
-            dashArray: '3',
             fillOpacity: 0.5
         };
     }
@@ -270,14 +278,17 @@ function schoolMap(){
 
     let ebJson = L.geoJson(elemBounds, {
       style: sbPaint,
+      interactive: false
     });
 
     let mbJson = L.geoJson(midBounds, {
       style: sbPaint,
+      interactive: false
     });
 
     let egJson = L.geoJson(elemGrounds, {
       style: sgPaint,
+      interactive: false
     });
 
     let epJson = L.geoJson(elemPoints, {
@@ -299,6 +310,7 @@ function schoolMap(){
 
     let mgJson = L.geoJson(midGrounds, {
       style: sgPaint,
+      interactive: false
     });
 
     let mpJson = L.geoJson(midPoints, {
@@ -336,7 +348,7 @@ function schoolMap(){
     var myControl = L.control.layers(schoolOverlay,'', {collapsed:false}).addTo(schoolMap);
 
     let Legend =  new L.Control.Legend({
-        position: 'bottomright',
+        position: 'bottomleft',
     });
 
     schoolMap.addControl(Legend);
@@ -414,7 +426,7 @@ function parkMap(){
 
     info.update = function infoFill(props) {
         this._div.innerHTML = '<h4>Park Service Area Demographics and Pollution</h4>' +  (props ?
-            '<b>' + '(For Ethnicities, 1 = 100%, 0 = 0%)' + '<br><b>' + 'Name: ' + props.Name + '</b><br />' + '<b>' + 'Average Pollution Index of Grounds ' + props.MEAN_Pol_1 + '</b><br />'  + 'Average Socioeconomic Status Index pf Service Area: ' + props.MEAN_SES + '<br />' + 'White Portion of Service Area: ' + props.MEAN_White + '<br />' + 'Black Portion of Service Area: ' + props.MEAN_Black + '<br />' + 'Native American Portion of Service Area: ' + props.MEAN_Nativ + '<br />' + 'Asian Portion of Service Area: ' + props.MEAN_Asian + '<br />' + 'Pacific Islander Portion of Service Area: ' + props.MEAN_Pacif + '<br />' + 'Multiracial Portion of Service Area: ' + props.MEAN_Multi + '<br />' + 'Portion of Other Ethnicities of Service Area: ' + props.MEAN_Other + '<br />'
+            '<b>' + '(For Ethnicities, 1 = 100%, 0 = 0%)' + '<br><b>' + 'Name: ' + props.Name + '</b><br />' + '<b>' + 'Average Pollution Index of Grounds ' + props.Pollution_ + '</b><br />'  + 'Average Socioeconomic Status Index pf Service Area: ' + props.MEAN_SES + '<br />' + 'White Portion of Service Area: ' + props.MEAN_White + '<br />' + 'Black Portion of Service Area: ' + props.MEAN_Black + '<br />' + 'Native American Portion of Service Area: ' + props.MEAN_Nativ + '<br />' + 'Asian Portion of Service Area: ' + props.MEAN_Asian + '<br />' + 'Pacific Islander Portion of Service Area: ' + props.MEAN_Pacif + '<br />' + 'Multiracial Portion of Service Area: ' + props.MEAN_Multi + '<br />' + 'Portion of Other Ethnicities of Service Area: ' + props.MEAN_Other + '<br />'
             : "Hover over a park's grounds to learn more.");
     };
 
@@ -455,10 +467,9 @@ function parkMap(){
     function psPaint(feature) {
         return {
             fillColor: '#808000',
-            weight: 2,
+            weight: 1,
             opacity: 1,
             color: 'white',
-            dashArray: '3',
             fillOpacity: 0.5
         };
     }
@@ -485,6 +496,7 @@ function parkMap(){
 
     let psJson = L.geoJson(parkService, {
       style: psPaint,
+      interactive: false
     }).addTo(parkMap);
 
     let geojson = L.geoJson(parkGrounds, {
@@ -493,14 +505,16 @@ function parkMap(){
     }).addTo(parkMap);
 
     let ppJson = L.geoJson(parkEntrance, {
+      interactive: false,
       pointToLayer: function(feature, latlng){
         var marker = L.circle(latlng, {size: 's', color: 'green'});
         return marker;
         }
+
     }).addTo(parkMap);
 
     let Legend =  new L.Control.Legend({
-        position: 'bottomright',
+        position: 'bottomleft',
     });
 
     parkMap.addControl(Legend);
