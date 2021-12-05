@@ -219,6 +219,11 @@ li {
   padding: 0.25em
 }
 
+img {
+  height: 3em;
+  margin-bottom: -1.5em;
+}
+
 canvas {
   margin-bottom: 3em;
   background: papayawhip;

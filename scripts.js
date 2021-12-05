@@ -21,7 +21,7 @@ function modeSet(){
 function pollutionMap(){
 
     var dark = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/" target="_null">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_null">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/" target="_null">Mapbox</a>',
         maxZoom: 18,
         id:'lafishergis/ckvwv1qz354hp14s8pcasgvi8',
         accessToken: 'sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw',
@@ -67,7 +67,7 @@ function pollutionMap(){
 
     info.update = function infoFill(props) {
         this._div.innerHTML = '<h4>Blockgroup Demographics and Pollution</h4>' +  (props ?
-            '<b>' + '(For Ethnicities, 1 = 100%, 0 = 0%)' + '<br>' + '<b>' + 'Pollution Index ' + props.Pollution_ + '</b><br />'  + 'Socioeconomic Status Index ' + props.Socioecono + '<br />' + 'White Portion ' + props.White_Port + '<br />' + 'Black Portion ' + props.Black_Port + '<br />' + 'Native American Portion ' + props.Native_Por + '<br />' + 'Asian Portion ' + props.Asian_Port + '<br />' + 'Pacific Islander Portion ' + props.Pacific_Po + '<br />' + 'Multiracial Portion ' + props.Multiracia + '<br />' + 'Portion of Other Ethnicities ' + props.Other_Port + '<br />'
+            '<b>' + '(For Ethnicities, 1 = 100%, 0 = 0%)' + '<br>' + '<b>' + 'Pollution Index ' + props.Pollution_ + '</b><br />'  + 'Socioeconomic Status Index ' + props.Socioecono + '<br />' + 'White Portion ' + props.White_Port.toFixed(3) + '<br />' + 'Black Portion ' + props.Black_Port.toFixed(3) + '<br />' + 'Native American Portion ' + props.Native_Por.toFixed(3) + '<br />' + 'Asian Portion ' + props.Asian_Port.toFixed(3) + '<br />' + 'Pacific Islander Portion ' + props.Pacific_Po.toFixed(3) + '<br />' + 'Multiracial Portion ' + props.Multiracia.toFixed(3) + '<br />' + 'Portion of Other Ethnicities ' + props.Other_Port.toFixed(3) + '<br />'
             : 'Hover over a blockgroup to learn more.');
     };
 
@@ -121,7 +121,7 @@ function pollutionMap(){
 function clusterMap(){
 
     var dark = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/" target="_null">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_null">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/" target="_null">Mapbox</a>',
         maxZoom: 18,
         id:'lafishergis/ckvwv1qz354hp14s8pcasgvi8',
         accessToken: 'sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw',
@@ -247,7 +247,7 @@ function clusterMap(){
 function schoolMap(){
 
     var dark = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/" target="_null">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_null">CC-BY-SA</a>, Imagery & Markers © <a href="https://www.mapbox.com/" target="_null">Mapbox</a>',
         maxZoom: 18,
         id:'lafishergis/ckvwv1qz354hp14s8pcasgvi8',
         accessToken: 'sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw',
@@ -291,18 +291,57 @@ function schoolMap(){
       interactive: false
     });
 
+    L.MakiMarkers.accessToken = "sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw";
+
+    const extremeSchool = L.MakiMarkers.icon({
+      icon: "school",
+      color: "bd0026",
+      size: "s"
+    });
+
+    const veryHeavilySchool = L.MakiMarkers.icon({
+      icon: "school",
+      color: "f03b20",
+      size: "s"
+    });
+
+    const heavilySchool = L.MakiMarkers.icon({
+      icon: "school",
+      color: "fd8d3c",
+      size: "s"
+    });
+
+    const moderateSchool= L.MakiMarkers.icon({
+      icon: "school",
+      color: "feb24c",
+      size: "s"
+    });
+
+    const lightlySchool= L.MakiMarkers.icon({
+      icon: "school",
+      color: "fed976",
+      size: "s"
+    });
+
+    const minimallySchool= L.MakiMarkers.icon({
+      icon: "school",
+      color: "ffffb2",
+      size: "s"
+    });
+
+
     let epJson = L.geoJson(elemPoints, {
       pointToLayer: function(feature, latlng){
-        var polluColor,
+        var polluMarker,
         risk = feature.properties.Pollution_;
-          if (feature.properties.Pollution_ > 15) polluColor = '#bd0026';
-          else if (feature.properties.Pollution_ > 7) polluColor = '#f03b20';
-          else if (feature.properties.Pollution_ > 3) polluColor = '#fd8d3c';
-          else if (feature.properties.Pollution_ > 1) polluColor = '#feb24c';
-          else if (feature.properties.Pollution_ > 0) polluColor = '#fed976';
-          else polluColor = '#ffffb2'
-        var marker = L.circle(latlng, {size: 'm', color: polluColor});
-          marker.bindPopup("Name: " + feature.properties.NAME + "<br>Address: " + feature.properties.ADDRESS + "<br> Grades: " + feature.properties.GRADE + "<br>" + "<br>Pollution Index: " + " " + feature.properties.Pollution_ + "<br>Average Socioeconomic Status Index: " + " " + feature.properties.MEAN_SES + "<br>White Portion of Cachement Area: " + " " + feature.properties.MEAN_White + "<br>Black Portion of Cachement Area: " + " " + feature.properties.MEAN_Black + "<br>Native American Portion of Cachement Area: " + " " + feature.properties.MEAN_Nativ + "<br>Asian Portion of Cachement Area: " + " " + feature.properties.MEAN_Asian + "<br>Pacific Islander Portion of Cachement Area: " + " " + feature.properties.MEAN_Pacif + "<br>Multiracial Portion of Cachement Area: " + " " + feature.properties.MEAN_Multi + "<br>Other Ethnicity Portion of Cachement Area: " + " " + feature.properties.MEAN_Other)
+          if (feature.properties.Pollution_ > 15) polluMarker = extremeSchool;
+          else if (feature.properties.Pollution_ > 7) polluMarker = veryHeavilySchool;
+          else if (feature.properties.Pollution_ > 3) polluMarker = heavilySchool;
+          else if (feature.properties.Pollution_ > 1) polluMarker = moderateSchool;
+          else if (feature.properties.Pollution_ > 0) polluMarker = lightlySchool;
+          else polluMarker = minimallySchool
+          var marker = L.marker(latlng, {icon: polluMarker});
+          marker.bindPopup("Name: " + feature.properties.NAME + "<br>Address: " + feature.properties.ADDRESS + "<br> Grades: " + feature.properties.GRADE + "<br>" + "<br>Pollution Index: " + " " + feature.properties.Pollution_ + "<br>Average Socioeconomic Status Index: " + " " + feature.properties.MEAN_SES.toFixed(3) + "<br>White Portion of Cachement Area: " + " " + feature.properties.MEAN_White.toFixed(3) + "<br>Black Portion of Cachement Area: " + " " + feature.properties.MEAN_Black.toFixed(3) + "<br>Native American Portion of Cachement Area: " + " " + feature.properties.MEAN_Nativ.toFixed(3) + "<br>Asian Portion of Cachement Area: " + " " + feature.properties.MEAN_Asian.toFixed(3) + "<br>Pacific Islander Portion of Cachement Area: " + " " + feature.properties.MEAN_Pacif.toFixed(3) + "<br>Multiracial Portion of Cachement Area: " + " " + feature.properties.MEAN_Multi.toFixed(3) + "<br>Other Ethnicity Portion of Cachement Area: " + " " + feature.properties.MEAN_Other.toFixed(3))
           if (feature.properties.Pollution_ !== "")
           return marker;
         }
@@ -315,16 +354,16 @@ function schoolMap(){
 
     let mpJson = L.geoJson(midPoints, {
       pointToLayer: function(feature, latlng){
-        var polluColor,
+        var polluMarker,
         risk = feature.properties.Pollution_;
-          if (feature.properties.Pollution_ > 15) polluColor = '#bd0026';
-          else if (feature.properties.Pollution_ > 7) polluColor = '#f03b20';
-          else if (feature.properties.Pollution_ > 3) polluColor = '#fd8d3c';
-          else if (feature.properties.Pollution_ > 1) polluColor = '#feb24c';
-          else if (feature.properties.Pollution_ > 0) polluColor = '#fed976';
-          else polluColor = '#ffffb2'
-        var marker = L.circle(latlng, {size: 'm', color: polluColor});
-          marker.bindPopup("Name: " + feature.properties.NAME + "<br>Address: " + feature.properties.ADDRESS + "<br> Grades: " + feature.properties.GRADE + "<br>" + "<br>Pollution Index: " + " " + feature.properties.Pollution_ + "<br>Average Socioeconomic Status Index of Catchment Area: " + " " + feature.properties.MEAN_SES + "<br>White Portion of Catchment Area: " + " " + feature.properties.MEAN_White + "<br>Black Portion of Catchment Area: " + " " + feature.properties.MEAN_Black + "<br>Native American Portion of Catchment Area: " + " " + feature.properties.MEAN_Nativ + "<br>Asian Portion of Catchment Area: " + " " + feature.properties.MEAN_Asian + "<br>Pacific Islander Portion of Catchment Area: " + " " + feature.properties.MEAN_Pacif + "<br>Multiracial Portion of Catchment Area: " + " " + feature.properties.MEAN_Multi + "<br>Other Ethnicity Portion of Catchment Area: " + " " + feature.properties.MEAN_Other)
+          if (feature.properties.Pollution_ > 15) polluMarker = extremeSchool;
+          else if (feature.properties.Pollution_ > 7) polluMarker = veryHeavilySchool;
+          else if (feature.properties.Pollution_ > 3) polluMarker = heavilySchool;
+          else if (feature.properties.Pollution_ > 1) polluMarker = moderateSchool;
+          else if (feature.properties.Pollution_ > 0) polluMarker = lightlySchool;
+          else polluMarker = minimallySchool
+          var marker = L.marker(latlng, {icon: polluMarker});
+          marker.bindPopup("Name: " + feature.properties.NAME + "<br>Address: " + feature.properties.ADDRESS + "<br> Grades: " + feature.properties.GRADE + "<br>" + "<br>Pollution Index: " + " " + feature.properties.Pollution_ + "<br>Average Socioeconomic Status Index of Catchment Area: " + " " + feature.properties.MEAN_SES.toFixed(3) + "<br>White Portion of Catchment Area: " + " " + feature.properties.MEAN_White.toFixed(3) + "<br>Black Portion of Catchment Area: " + " " + feature.properties.MEAN_Black.toFixed(3) + "<br>Native American Portion of Catchment Area: " + " " + feature.properties.MEAN_Nativ.toFixed(3) + "<br>Asian Portion of Catchment Area: " + " " + feature.properties.MEAN_Asian.toFixed(3) + "<br>Pacific Islander Portion of Catchment Area: " + " " + feature.properties.MEAN_Pacif.toFixed(3) + "<br>Multiracial Portion of Catchment Area: " + " " + feature.properties.MEAN_Multi.toFixed(3) + "<br>Other Ethnicity Portion of Catchment Area: " + " " + feature.properties.MEAN_Other.toFixed(3))
           if (feature.properties.Pollution_ !== "")
           return marker;
         }
@@ -402,7 +441,7 @@ function schoolMap(){
 function parkMap(){
 
     var dark = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/" target="_null">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/" target="_null">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/" target="_null">Mapbox</a>',
         maxZoom: 18,
         id:'lafishergis/ckvwv1qz354hp14s8pcasgvi8',
         accessToken: 'sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw',
@@ -426,7 +465,7 @@ function parkMap(){
 
     info.update = function infoFill(props) {
         this._div.innerHTML = '<h4>Park Service Area Demographics and Pollution</h4>' +  (props ?
-            '<b>' + '(For Ethnicities, 1 = 100%, 0 = 0%)' + '<br><b>' + 'Name: ' + props.Name + '</b><br />' + '<b>' + 'Average Pollution Index of Grounds ' + props.Pollution_ + '</b><br />'  + 'Average Socioeconomic Status Index pf Service Area: ' + props.MEAN_SES + '<br />' + 'White Portion of Service Area: ' + props.MEAN_White + '<br />' + 'Black Portion of Service Area: ' + props.MEAN_Black + '<br />' + 'Native American Portion of Service Area: ' + props.MEAN_Nativ + '<br />' + 'Asian Portion of Service Area: ' + props.MEAN_Asian + '<br />' + 'Pacific Islander Portion of Service Area: ' + props.MEAN_Pacif + '<br />' + 'Multiracial Portion of Service Area: ' + props.MEAN_Multi + '<br />' + 'Portion of Other Ethnicities of Service Area: ' + props.MEAN_Other + '<br />'
+            '<b>' + '(For Ethnicities, 1 = 100%, 0 = 0%)' + '<br><b>' + 'Name: ' + props.Name + '</b><br />' + '<b>' + 'Average Pollution Index of Grounds ' + props.Pollution_ + '</b><br />'  + 'Average Socioeconomic Status Index pf Service Area: ' + props.MEAN_SES.toFixed(3) + '<br />' + 'White Portion of Service Area: ' + props.MEAN_White.toFixed(3) + '<br />' + 'Black Portion of Service Area: ' + props.MEAN_Black.toFixed(3) + '<br />' + 'Native American Portion of Service Area: ' + props.MEAN_Nativ.toFixed(3) + '<br />' + 'Asian Portion of Service Area: ' + props.MEAN_Asian .toFixed(3)+ '<br />' + 'Pacific Islander Portion of Service Area: ' + props.MEAN_Pacif.toFixed(3) + '<br />' + 'Multiracial Portion of Service Area: ' + props.MEAN_Multi.toFixed(3) + '<br />' + 'Portion of Other Ethnicities of Service Area: ' + props.MEAN_Other.toFixed(3) + '<br />'
             : "Hover over a park's grounds to learn more.");
     };
 
@@ -468,7 +507,7 @@ function parkMap(){
         return {
             fillColor: '#808000',
             weight: 1,
-            opacity: 1,
+            opacity: 0.1,
             color: 'white',
             fillOpacity: 0.5
         };
