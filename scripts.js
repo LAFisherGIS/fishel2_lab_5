@@ -37,6 +37,9 @@ function pollutionMap(){
 
 //This is a six class jenks natural breaks classification
 
+//Thanks to leaflet for guidance starts here https://leafletjs.com/examples/choropleth/
+
+
     function colorization(d) {
         return d > 15       ? '#b30000' :
               d > 7         ? '#e34a33' :
@@ -109,6 +112,8 @@ function pollutionMap(){
       style: bgPaint,
       onEachFeature: mouseIntegration
     }).addTo(pbgMap);
+
+    // Thanks to leaflet for guidance ends here https://leafletjs.com/examples/choropleth/ - these elements are repeated in some other maps as well, but will not be credited again.
 
     let Legend =  new L.Control.Legend({
         position: 'bottomleft',
@@ -192,6 +197,8 @@ function clusterMap(){
       style: clustPaint,
       interactive: false
     });
+
+// Thanks to leaflet for guidance on layer groups and controls https://leafletjs.com/examples/layers-control/
 
     let clusterOverlay = {
       "Pollution Clusters": polluJson,
@@ -290,6 +297,8 @@ function schoolMap(){
       style: sgPaint,
       interactive: false
     });
+
+    // Thanks to jseppi for their guide on how to use MakiMarkers https://github.com/jseppi/Leaflet.MakiMarkers/blob/master/index.html
 
     L.MakiMarkers.accessToken = "sk.eyJ1IjoibGFmaXNoZXJnaXMiLCJhIjoiY2t2OXJ4dnV1YTY2ZjJwbnpjM3BxbWRnYiJ9.CW4oaT94TkbelBF0Fj4rJw";
 
