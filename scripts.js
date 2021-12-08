@@ -29,7 +29,7 @@ function pollutionMap(){
         zoomOffset: -1,
     });
 
-    var pbgMap = L.map('pbgmap', {
+    let pbgMap = L.map('pbgmap', {
       layers:[dark],
       maxBounds : [[47.37396776157878, -122.63860441671564], [47.09334144436703, -122.29401946898379]],
       minZoom : 12
@@ -57,7 +57,7 @@ function pollutionMap(){
         };
     }
 
-    var info = L.control();
+    let info = L.control();
 
     info.onAdd = function infoDiv(pbgMap) {
         this._div = L.DomUtil.create('div', 'info');
@@ -74,7 +74,7 @@ function pollutionMap(){
     info.addTo(pbgMap);
 
     function scrollOn(e) {
-      var layer = e.target;
+      let layer = e.target;
       layer.setStyle({
         weight: 5,
         color: '#666',
@@ -205,13 +205,13 @@ function clusterMap(){
       "Other Ethnicity Population Clusters": otherJson
     }
 
-    var clusterMap = L.map('clustermap', {
+    let clusterMap = L.map('clustermap', {
       layers:[dark, polluJson],
       maxBounds : [[47.37396776157878, -122.63860441671564], [47.09334144436703, -122.29401946898379]],
       minZoom : 12
     }).setView([47.2528769, -122.4442906], 12);
 
-    var myControl = L.control.layers(clusterOverlay,'', {collapsed:false}).addTo(clusterMap);
+    let myControl = L.control.layers(clusterOverlay,'', {collapsed:false}).addTo(clusterMap);
 
     let Legend =  new L.Control.Legend({
         position: 'bottomleft',
@@ -332,7 +332,7 @@ function schoolMap(){
 
     let epJson = L.geoJson(elemPoints, {
       pointToLayer: function(feature, latlng){
-        var polluMarker,
+        let polluMarker,
         risk = feature.properties.Pollution_;
           if (feature.properties.Pollution_ > 15) polluMarker = extremeSchool;
           else if (feature.properties.Pollution_ > 7) polluMarker = veryHeavilySchool;
@@ -340,7 +340,7 @@ function schoolMap(){
           else if (feature.properties.Pollution_ > 1) polluMarker = moderateSchool;
           else if (feature.properties.Pollution_ > 0) polluMarker = lightlySchool;
           else polluMarker = minimallySchool
-          var marker = L.marker(latlng, {icon: polluMarker});
+          let marker = L.marker(latlng, {icon: polluMarker});
           marker.bindPopup("Name: " + feature.properties.NAME + "<br>Address: " + feature.properties.ADDRESS + "<br> Grades: " + feature.properties.GRADE + "<br>" + "<br>Pollution Index: " + " " + feature.properties.Pollution_ + "<br>Average Socioeconomic Status Index: " + " " + feature.properties.MEAN_SES.toFixed(3) + "<br>White Portion of Cachement Area: " + " " + feature.properties.MEAN_White.toFixed(3) + "<br>Black Portion of Cachement Area: " + " " + feature.properties.MEAN_Black.toFixed(3) + "<br>Native American Portion of Cachement Area: " + " " + feature.properties.MEAN_Nativ.toFixed(3) + "<br>Asian Portion of Cachement Area: " + " " + feature.properties.MEAN_Asian.toFixed(3) + "<br>Pacific Islander Portion of Cachement Area: " + " " + feature.properties.MEAN_Pacif.toFixed(3) + "<br>Multiracial Portion of Cachement Area: " + " " + feature.properties.MEAN_Multi.toFixed(3) + "<br>Other Ethnicity Portion of Cachement Area: " + " " + feature.properties.MEAN_Other.toFixed(3))
           if (feature.properties.Pollution_ !== "")
           return marker;
@@ -354,7 +354,7 @@ function schoolMap(){
 
     let mpJson = L.geoJson(midPoints, {
       pointToLayer: function(feature, latlng){
-        var polluMarker,
+        let polluMarker,
         risk = feature.properties.Pollution_;
           if (feature.properties.Pollution_ > 15) polluMarker = extremeSchool;
           else if (feature.properties.Pollution_ > 7) polluMarker = veryHeavilySchool;
@@ -362,7 +362,7 @@ function schoolMap(){
           else if (feature.properties.Pollution_ > 1) polluMarker = moderateSchool;
           else if (feature.properties.Pollution_ > 0) polluMarker = lightlySchool;
           else polluMarker = minimallySchool
-          var marker = L.marker(latlng, {icon: polluMarker});
+          let marker = L.marker(latlng, {icon: polluMarker});
           marker.bindPopup("Name: " + feature.properties.NAME + "<br>Address: " + feature.properties.ADDRESS + "<br> Grades: " + feature.properties.GRADE + "<br>" + "<br>Pollution Index: " + " " + feature.properties.Pollution_ + "<br>Average Socioeconomic Status Index of Catchment Area: " + " " + feature.properties.MEAN_SES.toFixed(3) + "<br>White Portion of Catchment Area: " + " " + feature.properties.MEAN_White.toFixed(3) + "<br>Black Portion of Catchment Area: " + " " + feature.properties.MEAN_Black.toFixed(3) + "<br>Native American Portion of Catchment Area: " + " " + feature.properties.MEAN_Nativ.toFixed(3) + "<br>Asian Portion of Catchment Area: " + " " + feature.properties.MEAN_Asian.toFixed(3) + "<br>Pacific Islander Portion of Catchment Area: " + " " + feature.properties.MEAN_Pacif.toFixed(3) + "<br>Multiracial Portion of Catchment Area: " + " " + feature.properties.MEAN_Multi.toFixed(3) + "<br>Other Ethnicity Portion of Catchment Area: " + " " + feature.properties.MEAN_Other.toFixed(3))
           if (feature.properties.Pollution_ !== "")
           return marker;
@@ -378,13 +378,13 @@ function schoolMap(){
       "Middle Schools": mid
     }
 
-    var schoolMap = L.map('schoolmap', {
+    let schoolMap = L.map('schoolmap', {
       layers:[dark, elem],
       maxBounds : [[47.37396776157878, -122.63860441671564], [47.09334144436703, -122.29401946898379]],
       minZoom : 12
     }).setView([47.2528769, -122.4442906], 12);
 
-    var myControl = L.control.layers(schoolOverlay,'', {collapsed:false}).addTo(schoolMap);
+    let myControl = L.control.layers(schoolOverlay,'', {collapsed:false}).addTo(schoolMap);
 
     let Legend =  new L.Control.Legend({
         position: 'bottomleft',
@@ -449,13 +449,13 @@ function parkMap(){
         zoomOffset: -1,
     });
 
-    var parkMap = L.map('parkmap', {
+    let parkMap = L.map('parkmap', {
       layers:[dark],
       maxBounds : [[47.37396776157878, -122.63860441671564], [47.09334144436703, -122.29401946898379]],
       minZoom : 12
     }).setView([47.2528769, -122.4442906], 12);
 
-    var info = L.control();
+    let info = L.control();
 
     info.onAdd = function infoDiv(parkMap) {
         this._div = L.DomUtil.create('div', 'info');
@@ -472,7 +472,7 @@ function parkMap(){
     info.addTo(parkMap);
 
     function scrollOn(e) {
-      var layer = e.target;
+      let layer = e.target;
       layer.setStyle({
         weight: 5,
         color: '#666',
@@ -546,7 +546,7 @@ function parkMap(){
     let ppJson = L.geoJson(parkEntrance, {
       interactive: false,
       pointToLayer: function(feature, latlng){
-        var marker = L.circle(latlng, {size: 's', color: 'green'});
+        let marker = L.circle(latlng, {size: 's', color: 'green'});
         return marker;
         }
 
